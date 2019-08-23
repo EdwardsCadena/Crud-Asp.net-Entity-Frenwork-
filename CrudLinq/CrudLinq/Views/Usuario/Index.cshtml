@@ -1,0 +1,63 @@
+﻿@model List<CrudLinq.Models.Models.UsuarioModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="ui container">
+    <div class="ui grid stackable">
+        <div class="ui row">
+            <div class="ui ten wide column">
+                <div class="content centered aligned page">
+                    <h2 class="ui center aligned page">Personal</h2>
+                </div>
+                <table class="ui inverted grey table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>                            
+                            <th>Apellido</th>                            
+                            <th>Telefono</th>                            
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Nombre</td>                                
+                                <td>@item.Apellido</td>                                
+                                <td>@item.Telefono</td>                                
+                                <td>
+                                    <a class="small ui primary inverted button" href="@Url.Action("Editar","Usuario",new { item.Id })">
+                                        <i class="edit icon">
+                                        </i>
+                                        Editar
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="tiny ui red inverted button" href="@Url.Action("Eliminar","Usuario",new { item.Id })">
+                                        <i class="trash alternate icon">
+                                        </i>
+                                        Eliminar
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="ui six wide column">
+                <div class="content centered aligned page">
+                    <h2 class="ui center aligned page">Crear Personal</h2>
+                </div>
+                <div class="ui six wide column ">
+                    <div class="ui inverted grey segment">
+                        <a href="@Url.Action("Nuevo","Usuario")" class="small ui inverted green button"> Nuevo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

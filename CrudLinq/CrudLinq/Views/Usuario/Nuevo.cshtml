@@ -1,0 +1,45 @@
+﻿@model CrudLinq.Models.Models.UsuarioModel
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Nuevo", "Usuario", FormMethod.Post))
+{
+   
+    <div class="ui container">
+        <div class="ui grid stackable center aligned page">
+            <div class="row">
+                <div class="ui six wide column ">
+                    <div class="ui inverted grey segment">
+                        <div class="ui inverted form">
+                            <div class="ui form">
+                                <h2>Registro de Personal</h2>
+                                <hr />
+                                <div class="field required">
+                                    @Html.LabelFor(d => d.Nombre)
+                                    @Html.TextBoxFor(d => d.Nombre, "", new { @class = " ui field" })
+                                </div>
+                                <div class="field required" >
+                                    @Html.LabelFor(d => d.Apellido)
+                                    @Html.TextBoxFor(d => d.Apellido, "", new { @class = " ui field" })
+                                 </div>
+                                <div class="field required">
+                                    @Html.LabelFor(d => d.Telefono)
+                                    @Html.TextBoxFor(d => d.Telefono, "", new { @class = " ui field" })
+                                </div>                              
+                                <button type="submit" value="Create" class="small ui inverted green button">
+                                    <i class="save icon"></i>
+                                    Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

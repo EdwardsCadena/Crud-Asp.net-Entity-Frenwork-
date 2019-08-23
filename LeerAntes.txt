@@ -1,0 +1,10 @@
+Antes de ejecutar el aplicativo se deberá crear una base de datos en sql server este es el Query de la base de datos:
+
+create database crudlinq
+use crudlinq
+
+insert into usuario(Nombre,Apellido,Telefono)values ('Diego','Viracacha','1234645789')
+
+SELECT * FROM usuario
+
+Ejecutamos el query y ya estará listo el aplicativo para funcionar
